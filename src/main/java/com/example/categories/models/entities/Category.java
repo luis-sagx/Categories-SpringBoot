@@ -20,9 +20,11 @@ public class Category {
     private LocalDateTime dateCreation;
 
     @PrePersist
-    public void prePersist() {
+    @PreUpdate
+    public void updateDateCreation() {
         this.dateCreation = LocalDateTime.now();
     }
+
 
     public Category(LocalDateTime dateCreation, String description, String name) {
         this.dateCreation = dateCreation;
